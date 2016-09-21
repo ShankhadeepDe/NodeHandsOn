@@ -1,6 +1,10 @@
 var Express = require('express');
 var app = Express();
 var sql = require('mssql');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
 
 var config = {
                 user : 'sd',
@@ -31,8 +35,17 @@ var books = [
 ];
 
 var bookRouter = require('./Router/bookRoute.js')(books);
+var authRouter = require('./Router/authRoute.js')();
+
+app.use(Express.static('public/views'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(cookieParser());
+app.use(session({secret : 'library'}));
+require('./config/passport.js')(app);
 
 app.use('/Books',bookRouter);
+app.use('/auth',authRouter);
 
 app.get('/',function(req,res){    
     res.send("Greeting from Home module");
