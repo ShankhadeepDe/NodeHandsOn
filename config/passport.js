@@ -15,6 +15,6 @@ passport.deserializeUser(function(user,done){
     done(null,user);
 });
 
-//require('../strategies/local.strategy.js')();
+require('../strategies/local.strategy.js')();
 
 }

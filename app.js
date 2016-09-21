@@ -13,9 +13,11 @@ var config = {
                 database : 'ScrumToolTest'
             };
 
+/*
 sql.connect(config,function(err){
      if(err){console.log(err);}
-});            
+}); 
+*/           
 
 
 
@@ -47,7 +49,7 @@ require('./config/passport.js')(app);
 app.use('/Books',bookRouter);
 app.use('/auth',authRouter);
 
-app.get('/',function(req,res){    
+app.get('/Home',function(req,res){    
     res.send("Greeting from Home module");
 
 });
