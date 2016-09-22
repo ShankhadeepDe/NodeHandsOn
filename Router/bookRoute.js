@@ -6,6 +6,13 @@ var sql = require('mssql');
 
 
 var bookRouter = function(data){
+          router.use(function(req,res,next){
+                    if(!req.user){
+                        console.log('only members can view the book list');
+                        res.redirect('/Home');
+                      }
+                   else{ next()};
+          });
           router.route('/')
                 .get(function(req,res){
                    // var request = new sql.Request();
