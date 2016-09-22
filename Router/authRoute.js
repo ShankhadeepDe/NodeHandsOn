@@ -13,11 +13,11 @@ var authRouter = function(){
                    var user = {
                        username : req.body.userName,
                        password : req.body.password
-                     }
+                     };
                    collection.insert(user,function(err, results){
                      req.login(results.ops[0],function(){
                      res.redirect('/auth/Profile');
-                     })
+                     });
                    });
                });               
             });
