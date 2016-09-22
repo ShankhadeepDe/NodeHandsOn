@@ -8,10 +8,11 @@ var sql = require('mssql');
 var bookRouter = function(data){
           router.route('/')
                 .get(function(req,res){
-                    var request = new sql.Request();
-                    request.query('select * from WorkItemInformation',function(err,dataset){
-                         res.send(dataset);
-                     });
+                   // var request = new sql.Request();
+                   // request.query('select * from WorkItemInformation',function(err,dataset){
+                   //      res.send(dataset);
+                   //  });
+                      res.send(data);
                    });
 
           router.route('/:id')
