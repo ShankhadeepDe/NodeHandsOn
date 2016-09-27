@@ -1,0 +1,13 @@
+# node modules #
+#########################
+
+node_modules/
+
+
+# VSCode specific files #
+#############################
+.vscode/
+
+# VSCode specific files #
+#############################
+typings/
