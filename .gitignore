@@ -8,6 +8,8 @@ node_modules/
 #############################
 .vscode/
 
+
 # typings specific files #
+
 #############################
 typings/
